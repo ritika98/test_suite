@@ -9,8 +9,10 @@ import itertools as it
 all_params = {  
 				"encryption":["yes","no"],
 				"compression":["no","zstd_compression","gzip_compression"],
-				"emulation":[ "ahci-hd","virtio-blk", "nvme"],
+				"emulation":[ "ahci","virtio-blk", "nvme"],
 				"sector-size" : ["512","4096"],
+				# "architecture" : ["i386","arm64", "amd64"]
+				"architecture" : ["arm64"]
 			  }
 
 
@@ -34,20 +36,39 @@ boot_vars = {
 	"memory": "1G",
 	"device" : "/root/GSOC/FreeBSD-13.0-CURRENT-amd64.raw",
 	"name" : "freebsd",
-	"emulation" : "ahci-hd",
+	"emulation" : "ahci",
 	"sector-size": 4096
 }
 emulation = {
-	"ahci-hd" : " -s 4:0,ahci-hd,dumpdev,",
+"bhyve":{
+	"ahci" : " -s 4:0,ahci-hd,dumpdev,",
 	"nvme" : " -s 4:0,nvme,dumpdev,",
 	"virtio-blk" : ","
+	},
+"qemu":{
+	"ahci" : " -device ahci,id=ahci",
+	"nvme" : " -device nvme,drive=nvme0,serial=deadbeaf1,num_queues=8",
+	"virtio-blk" : ","
+}
 }
 sectorsize ={
-	"ahci-hd" : "sectorsize=",
-	"nvme" : "sectsz=",
-	"virtio-blk" : "sectorsize="
-}
+	"bhyve":{
+		"ahci" : "sectorsize=",
+		"nvme" : "sectsz=",
+		"virtio-blk" : ""
+		},
+	"qemu":{
+		"ahci" : "",
+		"nvme" : ",physical_block_size=",
+		"virtio-blk" : ",physical_block_size="
+		}
 
+}
+arc = {
+	"i386" : "sdm",
+	"amd64" : "FreeBSD-13.0-CURRENT-amd64.raw",
+	"arm64" : "FreeBSD-13.0-CURRENT-arm64-aarch64.raw"
+}
 
 def set_dump_cmd(config_vars, parameters):
 	cmd = "dumpon"
@@ -83,18 +104,21 @@ if __name__ == "__main__":
 			if i in parameter:
 				boot_vars[i] = parameter[i]
 		print(parameter)
-		config_parameters={"dump_flags":[]}
-		if(parameter["encryption"] == "yes"):
-			config_parameters["dump_flags"].append("encryption")
-		if(parameter["compression"] != "no"):
-			config_parameters["dump_flags"].append(parameter["compression"])
-		pexpect.run("bhyveload -c stdio -m 1G -d FreeBSD-13.0-CURRENT-amd64.raw freebsd")
-		time.sleep(20)
-		pexpect.run("truncate -s 4G dumpdev")
-		time.sleep(5)
-		ok = TAP.Builder.create(4).ok
-		command_line = "bhyve -c " + str(boot_vars["cpu"]) + " -m " + boot_vars["memory"] + " -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw" + emulation[boot_vars["emulation"]] + sectorsize[boot_vars["emulation"]]  + str(boot_vars["sector-size"]) + " " + boot_vars["name"]
+		if(parameter["architecture"] == "arm64"):
+			command_line = "qemu-system-aarch64 -m " + boot_vars["memory"] + " -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=" + arc[parameter["architecture"]] + ",id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0" + emulation["qemu"][boot_vars["emulation"]] + sectorsize["qemu"][boot_vars["emulation"]] + str(boot_vars["sector-size"]) + " -drive file=dumpdev,if=none,id=nvme0 -smp cpus=" + str(boot_vars["cpu"])
+		else:
+			config_parameters={"dump_flags":[]}
+			if(parameter["encryption"] == "yes"):
+				config_parameters["dump_flags"].append("encryption")
+			if(parameter["compression"] != "no"):
+				config_parameters["dump_flags"].append(parameter["compression"])
+			pexpect.run("bhyveload -c stdio -m 1G -d FreeBSD-13.0-CURRENT-amd64.raw freebsd")
+			time.sleep(20)
+			pexpect.run("truncate -s 4G dumpdev")
+			time.sleep(5)
+			command_line = "bhyve -c " + str(boot_vars["cpu"]) + " -m " + boot_vars["memory"] + " -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,"+arc[parameter["architecture"]] + emulation["bhyve"][boot_vars["emulation"]] + sectorsize["bhyve"][boot_vars["emulation"]]  + str(boot_vars["sector-size"]) + " " + boot_vars["name"]
 		print(command_line)
+		ok = TAP.Builder.create(4).ok
 		child = pexpect.spawn(command_line)
 		child.logfile = open("temp_log1.txt", "wb")
 		child.expect('login', timeout = 1000)
