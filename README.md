@@ -8,6 +8,7 @@ Configuration variables which are integrated in the test file:
 2. Encryption
 3. Emulated storage device (virtio-blk/ahci-hd/nvme)
 4. Block size (512/4096)
+5. Architecture (arm64/amd64/i386)
 ## Quick Start
 ### 1. Clone this file
 ```bashrc
