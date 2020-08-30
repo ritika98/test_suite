@@ -11,7 +11,8 @@ all_params = {
 				"compression":["no","zstd_compression","gzip_compression"],
 				"emulation":[ "ahci","virtio-blk", "nvme"],
 				"sector-size" : ["512","4096"],
-				"architecture" : ["i386","arm64", "amd64"]
+				"architecture" : [ "amd64","i386","arm64"]
+
 			  }
 
 dump_device = {
@@ -143,11 +144,11 @@ if __name__ == "__main__":
 			pexpect.run("truncate -s 4G dumpdev")
 			time.sleep(2)
 			command_line = "bhyve -c " + str(boot_vars["cpu"]) + " -m " + boot_vars["memory"] + " -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,"+arc[parameter["architecture"]] + emulation["bhyve"][boot_vars["emulation"]] + sectorsize["bhyve"][boot_vars["emulation"]]  + str(boot_vars["sector-size"]) + " " + boot_vars["name"]
-		print("Boot Command : " + command_line)
+		# print("Boot Command : " + command_line)
 		ok = TAP.Builder.create(6).ok
 		child = pexpect.spawn(command_line)
 		child.logfile = open("temp1.txt", "wb")
-		index = child.expect(['login',pexpect.TIMEOUT, "mountroot>"], timeout = 1000)
+		index = child.expect(['login',pexpect.TIMEOUT, "mountroot>"], timeout = 2000)
 		ok(index == 0, "VM Boot passed")
 		if(index == 0):
 			child.sendline('root')
@@ -173,14 +174,15 @@ if __name__ == "__main__":
 			child.sendline('continue')
 			time.sleep(10)
 			if(parameter["architecture"] != "arm64"):
-				if child.isalive():
-   					child.close()
+				child.close()
+				pexpect.run("bhyvectl --destroy --vm=freebsd")
+				time.sleep(2)
 				load_cmd = "bhyveload -c stdio -m 1G -d " + arc[parameter["architecture"]] + " freebsd"
 				pexpect.run(load_cmd)
 				time.sleep(10)
 				child = pexpect.spawn(command_line)
 				child.logfile = open("temp2.txt", "wb")
-			ind = child.expect(['login',pexpect.TIMEOUT, "mountroot>", 'IRQ Exception at 0x000000007F4A5440'],timeout = 1000)
+			ind = child.expect(['login',pexpect.TIMEOUT, "mountroot>", 'IRQ Exception at 0x000000007F4A5440'],timeout = 2000)
 			time.sleep(2)
 			ok(ind == 0, "VM reboot passed")
 			if(ind == 0):
@@ -190,8 +192,6 @@ if __name__ == "__main__":
 				child.sendline(savecore_cmd)
 				ok(child.after == b'root@freebsd:~ #',  "savecore passed")
 				cmd = set_undump_cmd(config_vars, config_parameters)
-				child.expect('root@freebsd:~ #',timeout = 1000)
-				child.sendline('ls /dev/gpt/swapfs')
 				child.expect('root@freebsd:~ #',timeout = 1000)
 				child.sendline('ls /var/crash/')
 				child.expect('root@freebsd:~ #',timeout = 1000)
