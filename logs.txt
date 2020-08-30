@@ -1,11 +1,10 @@
 ****************************************************************************
 Test case  1
-architecture : i386
+architecture : amd64
 compression : no
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -14,12 +13,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  2
-architecture : i386
+architecture : amd64
 compression : no
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -28,12 +26,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  3
-architecture : i386
+architecture : amd64
 compression : no
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -41,12 +38,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  4
-architecture : i386
+architecture : amd64
 compression : no
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -54,12 +50,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  5
-architecture : i386
+architecture : amd64
 compression : no
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -68,12 +63,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  6
-architecture : i386
+architecture : amd64
 compression : no
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -82,12 +76,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  7
-architecture : i386
+architecture : amd64
 compression : no
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -95,12 +88,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  8
-architecture : i386
+architecture : amd64
 compression : no
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -108,12 +100,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  9
-architecture : i386
+architecture : amd64
 compression : no
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -122,12 +113,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  10
-architecture : i386
+architecture : amd64
 compression : no
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -136,12 +126,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  11
-architecture : i386
+architecture : amd64
 compression : no
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -149,12 +138,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  12
-architecture : i386
+architecture : amd64
 compression : no
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -162,12 +150,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  13
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -177,12 +164,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  14
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -192,12 +178,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  15
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -206,12 +191,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  16
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -220,12 +204,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  17
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -235,12 +218,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  18
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -250,12 +232,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  19
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -264,12 +245,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  20
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -278,12 +258,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  21
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -293,12 +272,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  22
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -308,12 +286,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  23
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -322,12 +299,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  24
-architecture : i386
+architecture : amd64
 compression : zstd_compression
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -336,12 +312,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  25
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -351,12 +326,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  26
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -366,12 +340,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  27
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -380,12 +353,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  28
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -394,12 +366,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  29
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -409,12 +380,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  30
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -424,12 +394,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  31
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -438,12 +407,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  32
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -452,12 +420,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  33
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -467,12 +434,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  34
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -482,12 +448,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  35
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -496,12 +461,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  36
-architecture : i386
+architecture : amd64
 compression : gzip_compression
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-i386.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -510,12 +474,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  37
-architecture : arm64
+architecture : i386
 compression : no
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -524,12 +487,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  38
-architecture : arm64
+architecture : i386
 compression : no
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -538,12 +500,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  39
-architecture : arm64
+architecture : i386
 compression : no
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -551,12 +512,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  40
-architecture : arm64
+architecture : i386
 compression : no
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -564,60 +524,61 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  41
-architecture : arm64
+architecture : i386
 compression : no
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  42
-architecture : arm64
+architecture : i386
 compression : no
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  43
-architecture : arm64
+architecture : i386
 compression : no
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
 ****************************************************************************
 Test case  44
-architecture : arm64
+architecture : i386
 compression : no
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
 ****************************************************************************
 Test case  45
-architecture : arm64
+architecture : i386
 compression : no
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -626,12 +587,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  46
-architecture : arm64
+architecture : i386
 compression : no
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -640,12 +600,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  47
-architecture : arm64
+architecture : i386
 compression : no
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -653,12 +612,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  48
-architecture : arm64
+architecture : i386
 compression : no
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -666,12 +624,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  49
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -681,12 +638,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  50
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -696,12 +652,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  51
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -710,12 +665,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  52
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -724,60 +678,65 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  53
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decryption minidump passed
+not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  54
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decryption minidump passed
+not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  55
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  56
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  57
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -787,12 +746,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  58
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -802,12 +760,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  59
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -816,12 +773,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  60
-architecture : arm64
+architecture : i386
 compression : zstd_compression
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -830,27 +786,22 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  61
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decryption minidump passed
-ok 6 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  62
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -860,12 +811,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  63
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -874,12 +824,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  64
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -888,60 +837,65 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  65
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decryption minidump passed
+ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  66
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decryption minidump passed
+ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  67
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  68
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-not ok 3 - VM reboot passed
+ok 3 - VM reboot passed
+ok 4 - savecore passed
+ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  69
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -951,12 +905,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  70
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -966,12 +919,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  71
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=512 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -980,12 +932,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  72
-architecture : arm64
+architecture : i386
 compression : gzip_compression
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : qemu-system-aarch64 -m 1G -cpu max -M virt -bios QEMU_EFI.fd -nographic -drive format=raw,if=none,file=FreeBSD-13.0-CURRENT-arm64-aarch64.raw,id=hd0 -device virtio-net-device,netdev=net0 -netdev user,id=net0 -device virtio-blk-device,drive=hd0 -drive id=disk,file=dumpdev,if=none,id=nvme0 -device nvme,drive=disk,serial=deadbeaf1,num_queues=8,physical_block_size=4096 -drive if=none,file=dumpdev,id=hd1 -device virtio-blk-device,drive=hd1 -smp cpus=2
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -994,12 +945,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  73
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1008,12 +958,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  74
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1022,12 +971,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  75
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1035,12 +983,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  76
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1048,66 +995,55 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  77
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decryption minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  78
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decryption minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  79
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  80
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  81
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1116,12 +1052,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  82
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1130,12 +1065,11 @@ ok 4 - savecore passed
 ok 5 - decryption minidump passed
 ****************************************************************************
 Test case  83
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1143,12 +1077,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  84
-architecture : amd64
+architecture : arm64
 compression : no
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1156,12 +1089,11 @@ ok 3 - VM reboot passed
 ok 4 - savecore passed
 ****************************************************************************
 Test case  85
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1171,12 +1103,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  86
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1186,12 +1117,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  87
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1200,12 +1130,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  88
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1214,70 +1143,55 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  89
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decryption minidump passed
-not ok 6 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  90
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decryption minidump passed
-not ok 6 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  91
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  92
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  93
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1287,12 +1201,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  94
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1302,12 +1215,11 @@ ok 5 - decryption minidump passed
 not ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  95
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1316,12 +1228,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  96
-architecture : amd64
+architecture : arm64
 compression : zstd_compression
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1330,12 +1241,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  97
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : ahci
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1345,12 +1255,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  98
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : ahci
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1360,12 +1269,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  99
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : ahci
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1374,12 +1282,11 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  100
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : ahci
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,ahci-hd,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1388,70 +1295,55 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  101
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decryption minidump passed
-ok 6 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  102
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : virtio-blk
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decryption minidump passed
-ok 6 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  103
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  104
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : virtio-blk
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,virtio-blk,dumpdev,sectorsize=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
-ok 3 - VM reboot passed
-ok 4 - savecore passed
-ok 5 - decompression minidump passed
+not ok 3 - VM reboot passed
 ****************************************************************************
 Test case  105
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : nvme
 encryption : yes
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1461,12 +1353,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  106
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : nvme
 encryption : yes
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1476,12 +1367,11 @@ ok 5 - decryption minidump passed
 ok 6 - decompression minidump passed
 ****************************************************************************
 Test case  107
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : nvme
 encryption : no
 sector-size : 512
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=512 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
@@ -1490,15 +1380,15 @@ ok 4 - savecore passed
 ok 5 - decompression minidump passed
 ****************************************************************************
 Test case  108
-architecture : amd64
+architecture : arm64
 compression : gzip_compression
 emulation : nvme
 encryption : no
 sector-size : 4096
-Boot Command : bhyve -c 2 -m 1G -H -A -P -g 0 -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -l com1,stdio -s 3:0,virtio-blk,FreeBSD-13.0-CURRENT-amd64.raw -s 4:0,nvme,dumpdev,sectsz=4096 freebsd
 1..6
 ok 1 - VM Boot passed
 ok 2 - minidump passed
 ok 3 - VM reboot passed
 ok 4 - savecore passed
 ok 5 - decompression minidump passed
+
